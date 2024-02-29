@@ -11,7 +11,7 @@ app.use(express.json());
 app.use("/app", userRouter);
 
 mongoose.connect(
-  "mongodb+srv://yashprasad272:kvC7N3dOuiwaIevB@todo-app.ktz0jbz.mongodb.net/",
+  "mongodb+srv://yashprasad272:magloo%4007@todo-app.ktz0jbz.mongodb.net/",
   {
     dbName: "todoApp",
   }
