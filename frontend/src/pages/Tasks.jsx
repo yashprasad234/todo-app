@@ -19,7 +19,7 @@ function Tasks() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `https://todoistclone.vercel.app:3000/app/todos/${id}`,
+        `http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/todos/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ function Tasks() {
   const handleComplete = async (id) => {
     try {
       const response = await axios.put(
-        `https://todoistclone.vercel.app:3000/app/todos/${id}`,
+        `http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/todos/${id}`,
         null,
         {
           headers: {
@@ -64,7 +64,7 @@ function Tasks() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get("https://todoistclone.vercel.app:3000/app/todos", {
+        const response = await axios.get("http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/todos", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

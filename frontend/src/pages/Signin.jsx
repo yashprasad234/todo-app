@@ -19,7 +19,7 @@ function Signin() {
   const handleClick = async () => {
     try {
       const response = await axios.post(
-        "https://todoistclone.vercel.app:3000/app/login",
+        "http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/login",
         null,
         {
           headers: { username, password },

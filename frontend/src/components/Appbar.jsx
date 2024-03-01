@@ -13,7 +13,7 @@ function Appbar() {
   useEffect(() => {
     const fetchMe = async () => {
       try {
-        const response = await axios.get("https://todoistclone.vercel.app:3000/app/me", {
+        const response = await axios.get("http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

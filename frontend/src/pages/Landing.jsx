@@ -18,7 +18,7 @@ function Landing() {
   // Function to handle sign-up button click
   const handleClick = async () => {
     try {
-      const response = await axios.post("https://todoistclone.vercel.app:3000/app/signup", {
+      const response = await axios.post("http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/signup", {
         username,
         password,
       });
