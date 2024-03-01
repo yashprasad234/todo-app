@@ -5,6 +5,8 @@ const userRouter = require("./routes/index");
 
 const app = express();
 
+const mongoConnectURL = process.env.DB_CONNECT_URL;
+
 // Allow requests from Vercel frontend
 app.use(cors({
   origin: 'https://todoistclone.vercel.app'
@@ -15,7 +17,7 @@ app.use(express.json());
 app.use("/app", userRouter);
 
 mongoose.connect(
-  "mongodb+srv://yashprasad272:magloo%4007@todo-app.ktz0jbz.mongodb.net/",
+  `${mongoConnectURL}`,
   {
     dbName: "todoApp",
   }
