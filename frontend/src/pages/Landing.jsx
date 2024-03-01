@@ -3,6 +3,7 @@ import { Grid, Card, Typography, Button, TextField, Box } from "@mui/material/";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 /**
  * Functional component representing the landing page.
@@ -18,7 +19,7 @@ function Landing() {
   // Function to handle sign-up button click
   const handleClick = async () => {
     try {
-      const response = await axios.post("http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/signup", {
+      const response = await axios.post(`${backendUrl}/app/signup`, {
         username,
         password,
       });

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 /**
  * Functional component representing the application's app bar.
@@ -13,7 +14,7 @@ function Appbar() {
   useEffect(() => {
     const fetchMe = async () => {
       try {
-        const response = await axios.get("http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/me", {
+        const response = await axios.get(`${backendUrl}/app/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

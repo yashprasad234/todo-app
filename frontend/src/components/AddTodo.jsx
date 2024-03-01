@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { Typography, TextField } from "@mui/material";
 import axios from "axios";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 /**
  * Functional component for adding a new todo item.
@@ -36,7 +37,7 @@ export default function AddTodo({
       setAddState(false);
       try {
         const response = await axios.post(
-          "http://ec2-16-16-198-27.eu-north-1.compute.amazonaws.com:3000/app/todos",
+          `${backendUrl}/app/todos`,
           {
             title: todoTitle,
           },
