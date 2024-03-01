@@ -5,7 +5,11 @@ const userRouter = require("./routes/index");
 
 const app = express();
 
-app.use(cors());
+// Allow requests from Vercel frontend
+app.use(cors({
+  origin: 'https://todoistclone.vercel.app'
+}));
+
 app.use(express.json());
 
 app.use("/app", userRouter);
