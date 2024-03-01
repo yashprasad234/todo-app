@@ -36,7 +36,7 @@ export default function AddTodo({
       setAddState(false);
       try {
         const response = await axios.post(
-          "http://localhost:3000/app/todos",
+          "https://todoistclone.vercel.app:3000/app/todos",
           {
             title: todoTitle,
           },

@@ -19,7 +19,7 @@ function Tasks() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/app/todos/${id}`,
+        `https://todoistclone.vercel.app:3000/app/todos/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ function Tasks() {
   const handleComplete = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/app/todos/${id}`,
+        `https://todoistclone.vercel.app:3000/app/todos/${id}`,
         null,
         {
           headers: {
@@ -64,7 +64,7 @@ function Tasks() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/app/todos", {
+        const response = await axios.get("https://todoistclone.vercel.app:3000/app/todos", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
