@@ -16,6 +16,12 @@ app.use(express.json());
 
 app.use("/app", userRouter);
 
+
+app.use(express.static("public"));
+app.use("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"))
+})
+
 mongoose.connect(
   `${mongoConnectURL}`,
   {
