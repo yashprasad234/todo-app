@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/index");
+require('dotenv').config();
 
 const app = express();
 
@@ -30,5 +31,5 @@ mongoose.connect(
 );
 
 app.listen(3000, () => {
-  console.log(`Example app listening on port 3000`);
+  console.log(`Example app listening on port 3000 ${mongoConnectURL}`);
 });
