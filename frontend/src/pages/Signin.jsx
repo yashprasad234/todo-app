@@ -3,7 +3,6 @@ import { Card, TextField, Typography, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 /**
  * Functional component representing the sign-in form.
@@ -20,7 +19,7 @@ function Signin() {
   const handleClick = async () => {
     try {
       const response = await axios.post(
-        `${backendUrl}/app/login`,
+        `http://ec2-13-50-109-3.eu-north-1.compute.amazonaws.com:3000/app/login`,
         null,
         {
           headers: { username, password },

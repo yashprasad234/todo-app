@@ -8,8 +8,6 @@ import Sidebar from "../components/Sidebar";
 import Task from "../components/Task";
 import AddTodo from "../components/AddTodo";
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
 // Define the Tasks component
 function Tasks() {
   // Define state variables using the useState hook
@@ -21,7 +19,7 @@ function Tasks() {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        `${backendUrl}/app/todos/${id}`,
+        `http://ec2-13-50-109-3.eu-north-1.compute.amazonaws.com:3000/app/todos/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -37,7 +35,7 @@ function Tasks() {
   const handleComplete = async (id) => {
     try {
       const response = await axios.put(
-        `${backendUrl}/app/todos/${id}`,
+        `http://ec2-13-50-109-3.eu-north-1.compute.amazonaws.com:3000/app/todos/${id}`,
         null,
         {
           headers: {
@@ -66,7 +64,7 @@ function Tasks() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get(`${backendUrl}/app/todos`, {
+        const response = await axios.get(`http://ec2-13-50-109-3.eu-north-1.compute.amazonaws.com:3000/app/todos`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
